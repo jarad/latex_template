@@ -1,0 +1,48 @@
+\documentclass{article}
+
+\usepackage{natbib,fullpage}
+
+\title{A knitr template}
+\author{Jarad Niemi}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Section}
+
+\subsection{Subsection}
+
+\subsubsection{Subsubsection}
+
+\section*{Un-numbered section}
+
+<<invisible_R_code, echo=FALSE>>=
+a = 1
+@
+
+<<visible_R_code, echo=TRUE>>=
+# R code
+a+1
+@
+
+<<unevaluated_R_code, eval=FALSE>>=
+1+1
+@
+
+<<>>=
+hist(rnorm(100))
+@
+
+\section{Reference}
+
+Here is a reference \citep{niemi2010adaptive}.
+
+
+
+\bibliography{biblio}{}
+\bibliographystyle{apalike}
+
+
+\end{document}
