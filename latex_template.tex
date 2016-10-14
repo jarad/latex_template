@@ -1,0 +1,78 @@
+\documentclass[10pt]{article}
+
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage{fancyhdr}
+\usepackage{syntonly}
+\usepackage{graphicx}
+
+\title{My title}
+\author{Dr. Jarad Niemi}
+%\institution{Iowa State University}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\section{First section}
+
+The header used in this document is one I used for homework to reduce margins. For a journal article we will uncomment all the header and manual adjustment of margins.
+
+Here is a label to Figure \ref{fig:2009} and one to Figures \ref{fig:n1}-\ref{fig:n2} in Section \ref{sec:subsection} as well as to Table \ref{20070717t1} in the Section \ref{sec:subsubsection}. 
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=5in]{2009}
+\begin{minipage}{.85\textwidth}
+\caption{Traceplots for $Y$.}
+\label{fig:2009}
+\end{minipage}
+\end{figure}
+
+\subsection{A subsection \label{sec:subsection}}
+
+% 2 Figures side-by-side
+\begin{figure}
+\begin{minipage}[b]{0.5\linewidth} % A minipage that covers half the page
+\centering
+\includegraphics[width=6cm]{n1}
+\caption{Histogram of proportion of MCMC draws below $k$.}\label{fig:n1}
+\end{minipage}
+\hspace{0.5cm} % To get a little bit of space between the figures
+\begin{minipage}[b]{0.5\linewidth}
+\centering
+\includegraphics[width=6cm]{n2}
+\caption{Histogram of proportion of MCMC draws below $W$.}\label{fig:n2}
+\end{minipage}
+\end{figure}
+
+\subsubsection{A subsubsection \label{sec:subsubsection}}
+
+\begin{table}[htbp]
+\centering
+\caption{Qualitative results for Gibbs sampling of $\phi$ in constant DLM $\{1,\phi, .0001,1\}$.}
+\label{20070717t1}
+\vspace{11pt}
+\begin{tabular}{l|cc}
+\hline
+& \multicolumn{2}{c}{$\phi$} \\
+T & .5 & .99 \\
+\hline
+$10^1$ & \\
+
+\hline
+\end{tabular}
+\end{table}
+
+\section*{Un-numbered section}
+
+Use the asterisk to not have a number on the section. Finally here is a reference to a paper \citep{Niem:Smit:Bank:test:2008}.
+
+\bibliographystyle{natbib}
+\bibliography{jarad}
+
+\end{document}
